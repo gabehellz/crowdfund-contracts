@@ -2,11 +2,14 @@
 pragma solidity ^0.8.36;
 
 import {Ownable} from "solady/src/auth/Ownable.sol";
+import {SafeTransferLib} from "solady/src/utils/SafeTransferLib.sol";
 
 contract Crowdfund is Ownable {
     uint256 public immutable targetAmount;
 
     uint256 public amountReceived;
+
+    address public weth;
 
     mapping(address => uint256) public contributions;
 
@@ -14,8 +17,9 @@ contract Crowdfund is Ownable {
 
     error TargetAmountReached();
 
-    constructor(address owner_, uint256 targetAmount_) {
+    constructor(address owner_, address weth_, uint256 targetAmount_) {
         _initializeOwner(owner_);
+        weth = weth_;
         targetAmount = targetAmount_;
     }
 
@@ -32,5 +36,12 @@ contract Crowdfund is Ownable {
         amountReceived += msg.value;
         contributions[msg.sender] += msg.value;
         emit Contribution(msg.sender, msg.value);
+    }
+
+    function contributeWrapped(uint256 amount) external whenTargetNotReached {
+        amountReceived += amount;
+        contributions[msg.sender] += amount;
+        SafeTransferLib.safeTransferFrom(weth, msg.sender, address(this), amount);
+        emit Contribution(msg.sender, amount);
     }
 }
