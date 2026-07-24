@@ -4,3 +4,10 @@
 [submodule "lib/solady"]
 	path = lib/solady
 	url = https://github.com/vectorized/solady
+[submodule "lib/chainlink-evm"]
+	path = lib/chainlink-evm
+	url = https://github.com/smartcontractkit/chainlink-evm
+	branch = contracts-solidity/1.5.1
+[submodule "lib/openzeppelin-contracts-4.9.6"]
+	path = lib/openzeppelin-contracts-4.9.6
+	url = https://github.com/openzeppelin/openzeppelin-contracts

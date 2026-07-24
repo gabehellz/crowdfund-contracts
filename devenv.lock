@@ -3,11 +3,11 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1784325378,
-        "narHash": "sha256-Gof6j4d43yX2qSLLp78JILke346IggDFIxTgl3ecVQE=",
+        "lastModified": 1784722450,
+        "narHash": "sha256-Re9OKnIykQ5KzQdAtUAJ8/0ATvaEFNq+XtND1empyp0=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "5f1cf17be0fc48689bd0ecb810de6d2e06d259a1",
+        "rev": "54684d441c5465463ddcd751533d10f9d9c7d6d1",
         "type": "github"
       },
       "original": {
@@ -19,14 +19,15 @@
     },
     "evm": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1784422584,
-        "narHash": "sha256-HAXj0F51Uf84RzezYPoDjbwUbvVTd/IJDDl7e+mhDuA=",
+        "lastModified": 1784635702,
+        "narHash": "sha256-ou0DW0LAwV+53/9u+R6AgLONGYqamcL5dinpL8JV6FM=",
         "owner": "gabehellz",
         "repo": "evm.nix",
-        "rev": "2d6659dae21bd373f84b6e506f69068d852d0217",
+        "rev": "e718dff70fdd3db94744dbe630a596c8a9cf17de",
         "type": "github"
       },
       "original": {
@@ -131,6 +132,27 @@
         "evm": "evm",
         "git-hooks": "git-hooks",
         "nixpkgs": "nixpkgs_2"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "evm",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784611586,
+        "narHash": "sha256-OfqgY+0hp/zseZB7uyH0U8kIDPS4scZZCyAurEplvG0=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "14f58845249f3552a89b07772626b8d3c632fa86",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     }
   },

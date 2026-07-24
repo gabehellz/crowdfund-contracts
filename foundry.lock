@@ -1,8 +1,20 @@
 {
+  "lib/chainlink-evm": {
+    "branch": {
+      "name": "contracts-solidity/1.5.1",
+      "rev": "7a9453fb99ae3b44cbf4b2e34c8bc4f6118737d4"
+    }
+  },
   "lib/forge-std": {
     "tag": {
       "name": "v1.16.2",
       "rev": "bf647bd6046f2f7da30d0c2bf435e5c76a780c1b"
+    }
+  },
+  "lib/openzeppelin-contracts-4.9.6": {
+    "tag": {
+      "name": "v4.9.6",
+      "rev": "dc44c9f1a4c3b10af99492eed84f83ed244203f6"
     }
   },
   "lib/solady": {
